@@ -1,2 +1,2 @@
 # Rock-paper-scissors-project
-My second Odin Project and my first using jabascript!
+My second Odin Project and my first using javascript!
