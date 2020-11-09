@@ -54,7 +54,8 @@
                     console.log('You won! ' + playerSelection + ' beats ' + computerSelection);
                     break;
                 case 0:
-                    i--;
+                    playerScore+=0.5;
+                    computerScore+=0.5;
                     console.log('It is a tie! '+ playerSelection + ' and ' + computerSelection);
                     break;
                 case -1:
@@ -65,9 +66,13 @@
             console.log('Score:\n' + 'Player: ' + playerScore + ' Computer: ' + computerScore);
         }
         if(playerScore > computerScore){
-            return 'Congratulations! You won a game!'
+            return 'Congratulations! You won a game ' + playerScore + ' to ' + computerScore
         }
-        return 'Unfortunatly you lost...'
+        else if(playerScore < computerScore)
+        {
+            return 'Unfortunatly you lost against computer ' + playerScore + ' to ' + computerScore;
+        }
+        return 'It is a tie ' + playerScore + ' to ' + computerScore;
     }
 
     console.log(game());
