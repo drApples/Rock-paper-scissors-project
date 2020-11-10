@@ -32,7 +32,7 @@
         else if(str.trim().toLowerCase() === 'scissors'){
             return 'Scissors'
         }
-        return 0;
+        return null;
     }
 
     function game(){
@@ -43,11 +43,11 @@
         for(let i = 1; i <= 5; i++){
             playerSelection = formatInput(prompt('Choose your weapon'));
             computerSelection = computerPlay();
-            if(playerSelection === 0){
+            if(playerSelection === null){
                 i--;
                 console.log('Wrong input!! try again');
-                continue;
             }
+            else{
             switch(playRound(playerSelection, computerSelection)){
                 case 1:
                     playerScore++;
@@ -64,6 +64,7 @@
                     break;
             }
             console.log('Score:\n' + 'Player: ' + playerScore + ' Computer: ' + computerScore);
+            }
         }
         if(playerScore > computerScore){
             return 'Congratulations! You won a game ' + playerScore + ' to ' + computerScore
