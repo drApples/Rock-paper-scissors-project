@@ -1,4 +1,34 @@
 <html>
 
-    <script src = 'script.js'></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+
+    <div id='btnArea'>
+        <button id='Rock' class='playerButton'>Rock</button>
+        <button id='Paper' class='playerButton'>Paper</button>
+        <button id='Scissors' class='playerButton'>Scissors</button>
+    </div>
+
+    <div>
+        <p id='message'>Hello there! Let's start a game</p>
+        <table class='scoreTable'>
+            <tr>
+                <td>&nbsp;</td>
+                <td>Player</td>
+                <td>Computer</td>
+            </tr>
+            <tr>
+                <td>Score</td>
+                <td id='playerScore' class='shownScore'>0</td>
+                <td id='computerScore' class='shownScore'>0</td>
+            </tr>
+        </table>
+    </div>
+    <script defer src='script.js'></script>
+</body>
+
 </html>
