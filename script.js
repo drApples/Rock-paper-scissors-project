@@ -3,6 +3,7 @@ const message = document.querySelector('h1');
 const shownScore = document.querySelectorAll('.shownScore');
 let playerScore = 0;
 let computerScore = 0;
+let roundCount = 0;
 buttons.forEach(button => button.addEventListener('click', e => {
     game(e.target.parentElement.id, computerPlay());
 }));
@@ -20,19 +21,21 @@ function computerPlay() {
 function updateMessage(whowon, playerSelection, computerSelection) {
     switch (whowon) {
         case 1:
-            message.innerText = 'You won! ' + playerSelection + ' beats ' + computerSelection;
+            message.innerText = 'You won round ' + roundCount + '! ' + playerSelection + ' beats ' + computerSelection;
             break;
         case 0:
-            message.innerText = 'It is a tie! ' + playerSelection + ' against ' + computerSelection;
+            message.innerText = 'It is a tie in round '  + roundCount + '! ' + playerSelection + ' against ' + computerSelection;
             break;
         case -1:
-            message.innerText = 'You lost! ' + playerSelection + ' is beaten by ' + computerSelection;
+            message.innerText = 'You lost round '  + roundCount + '! ' + playerSelection + ' is beaten by ' + computerSelection;
             break;
     }
 }
 
 function playRound(playerSelection, computerSelection) {
     const playcomb = playerSelection + computerSelection;
+    roundCount++;
+
     if (playcomb === 'RockScissors' || playcomb === 'PaperRock' || playcomb === 'ScissorsPaper') {
         playerScore++;
         updateMessage(1, playerSelection, computerSelection)
@@ -51,20 +54,16 @@ function game(playerSelection, computerSelection) {
     playRound(playerSelection, computerSelection);
     shownScore[0].innerText = playerScore;
     shownScore[1].innerText = computerScore;
-    if (playerScore === 5) {
-        confirm('Congratulations! You won a game ' + playerScore + ' to ' + computerScore)
-        playerScore = 0;
-        computerScore = 0;
-        shownScore[0].innerText = '';
-        shownScore[1].innerText = '';
-    }
-    else if (computerScore === 5) {
+
+    if (playerScore === 5 || computerScore === 5) {
+        (playerScore === 5) ? confirm('Congratulations! You won a game ' + playerScore + ' to ' + computerScore) :
         confirm('Unfortunatly you lost against computer ' + playerScore + ' to ' + computerScore);
         message.innerText = 'Let\'s play again';
-        computerScore = 0;
         playerScore = 0;
-        shownScore[0].innerText = '-';
-        shownScore[1].innerText = '-';
+        computerScore = 0;
+        roundCount = 0;
+        shownScore[0].innerText = '';
+        shownScore[1].innerText = '';
     }
 }
 
