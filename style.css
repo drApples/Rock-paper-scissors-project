@@ -1,0 +1,48 @@
+body{
+    display: flex;
+    color: floralwhite;
+    flex-direction: column;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(rgb(2, 2, 2), rgb(43, 42, 42));
+    font-family: 'Raleway', sans-serif;
+
+}
+
+main{
+    align-self: center;
+    align-items: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-around;
+}
+
+#btnArea{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+button{
+    background: none;
+    border: none;
+    padding: 0%;
+    color: floralwhite;
+}
+
+button:hover{
+    cursor: pointer;
+    transform: scale(1.08);
+}
+.scoreTable{
+    text-align: center;
+    font-size: larger;
+    width: 80%;
+}
+
+td{
+    padding: 3%;
+}

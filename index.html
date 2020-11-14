@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
+    <link rel='stylesheet' href='style.css'>
+    <link rel='preconnect' href='https://fonts.gstatic.com'>
+    <link href='https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,900&display=swap' rel='stylesheet'>
+    <script src='https://kit.fontawesome.com/62e1d8dfa4.js' crossorigin='anonymous'></script>
 </head>
 
 <body>
+    <main>
+        <h1>Hello there! Choose your weapon to start a game</h1>
 
-    <div id='btnArea'>
-        <button id='Rock' class='playerButton'>Rock</button>
-        <button id='Paper' class='playerButton'>Paper</button>
-        <button id='Scissors' class='playerButton'>Scissors</button>
-    </div>
+        <div id='btnArea'>
+            <button id='Rock' class='playerButton'><i class='fas fa-fist-raised fa-10x'></i></button>
+            <button id='Paper' class='playerButton'><i class='fas fa-scroll fa-10x'></i></button>
+            <button id='Scissors' class='playerButton'><i class='fas fa-cut fa-10x'></i></button>
+        </div>
 
-    <div>
-        <p id='message'>Hello there! Let's start a game</p>
         <table class='scoreTable'>
             <tr>
                 <td>&nbsp;</td>
@@ -23,11 +27,11 @@
             </tr>
             <tr>
                 <td>Score</td>
-                <td id='playerScore' class='shownScore'>0</td>
-                <td id='computerScore' class='shownScore'>0</td>
+                <td id='playerScore' class='shownScore'>-</td>
+                <td id='computerScore' class='shownScore'>-</td>
             </tr>
         </table>
-    </div>
+    </main>
     <script defer src='script.js'></script>
 </body>
 
